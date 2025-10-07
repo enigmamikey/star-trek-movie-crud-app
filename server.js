@@ -25,6 +25,10 @@ app.get('/', (req,res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
+app.get('/movie', (req,res) => {
+    res.json({title: movies[Math.floor(Math.random()*movies.length)]})
+})
+
 app.listen(process.env.PORT || PORT, () => {
     console.log(`The server is now running on port ${PORT}! Betta Go Catch it!!!`)
 })
